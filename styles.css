@@ -1,0 +1,151 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f1e8;
+  --paper: #fffdf8;
+  --ink: #1f1a15;
+  --muted: #6d6258;
+  --line: #dccfbd;
+  --accent: #9b5f2d;
+  --accent-soft: #f1e2d4;
+  --shadow: rgba(50, 32, 17, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.7), transparent 38%),
+    linear-gradient(180deg, #f8f4ec 0%, var(--bg) 100%);
+  color: var(--ink);
+  font:
+    16px/1.65 Georgia,
+    "Times New Roman",
+    serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+.shell {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 72px;
+}
+
+.shell--narrow {
+  width: min(760px, calc(100% - 32px));
+}
+
+.hero {
+  margin-bottom: 32px;
+}
+
+.hero--compact {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+h1,
+h2 {
+  line-height: 1.15;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+}
+
+h2 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.lede,
+.meta {
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card,
+.document {
+  display: block;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 20px 50px var(--shadow);
+}
+
+.card {
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease,
+    border-color 140ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 24px 56px rgba(50, 32, 17, 0.12);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card span {
+  display: inline-block;
+  margin-top: 12px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.document {
+  padding: 28px;
+}
+
+.document p,
+.document ul {
+  margin-top: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+  .shell,
+  .shell--narrow {
+    width: min(100% - 24px, 960px);
+    padding-top: 28px;
+    padding-bottom: 40px;
+  }
+
+  .document,
+  .card {
+    border-radius: 18px;
+  }
+}
